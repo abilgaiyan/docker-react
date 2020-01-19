@@ -1,0 +1,12 @@
+# Specify the intial start up image
+
+FROM node:alpine
+
+WORKDIR /app
+#Specify dependency 
+COPY ./package.json ./
+RUN npm install
+COPY ./ ./
+
+# Specify the command on start up
+CMD ["npm", "run", "start"] 
